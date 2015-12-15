@@ -317,6 +317,11 @@ body {
     #textEditorContainer {
       max-width: 1000%; } }
 
+#textEditorDatabase button {
+  width: 100%;
+  padding: 1em;
+  font-size: 1em; }
+
 #textEditorFunctions .functionButton,
 #textEditorFunctions .functionSelect {
   margin: 0.5em 0;

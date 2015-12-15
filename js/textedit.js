@@ -10,6 +10,9 @@ Declaring variables
 	var $functionButtons = $('.functionButton');
 	var $functionSelects = $('.functionSelect');
 
+	var $saveIntoDatabase = $('#textEditorSaveIntoDatabase');
+	var $saveAsDraft = $('#textEditorSaveAsDraft');
+
 /******************************************************************************************
 Binding events
 ******************************************************************************************/
@@ -17,11 +20,20 @@ Binding events
 	$functionButtons.on('mousedown', buttonDown);
 	$functionButtons.on('mouseup', buttonUp);
 	$functionButtons.on('mouseleave', buttonUp);
+
 	$functionSelects.on('change', changeSelection);
 	$functionSelects.on('mouseleave', changeSelection);
 
+	$saveIntoDatabase.on('click', {
+		status: 'save'
+	}, saveIntoDatabase);
+
+	$saveAsDraft.on('click', {
+		status: 'draft'
+	}, saveIntoDatabase);
+
 /******************************************************************************************
-Functions
+Doc formatting functions
 ******************************************************************************************/
 
 	function formatDoc(contentArea, commandName, argumentValue) {
@@ -51,6 +63,44 @@ Functions
 		formatDoc($textEditorContent, id, argumentValue);
 	}
 
+/******************************************************************************************
+Sending data to database (simulation)
+******************************************************************************************/
+
+	var TextInput = function(input){
+		this.data = input
+	}
+
+	TextInput.prototype.replaceAll = function(find, replace){
+		this.data = this.data.replace(new RegExp(find, 'g'), replace);
+		return this;
+	}
+
+	TextInput.prototype.trimText = function(){
+		this.data = this.data.trim();
+		return this;
+	}
+
+	function saveIntoDatabase(event){
+
+		var finalizedText = new TextInput($textEditorContent.html());
+		finalizedText.trimText()
+			.replaceAll('<div><br></div>', '<br>')
+			.replaceAll('<div', '<p')
+			.replaceAll('/div>', '/p>')
+
+		switch(event.data.status) {
+			case 'save':
+				console.log('save')
+				break;
+			case 'draft':
+				console.log('draft')
+				break;
+			default:
+				console.log('error')
+		}
+
+	}
 
 })
 
