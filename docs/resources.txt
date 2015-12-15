@@ -1,0 +1,5 @@
+Manipulating the content of editable content
+	http://jsfiddle.net/GZ3cv/
+
+relapcing ALL occurencies of a string in JS
+	http://stackoverflow.com/questions/1144783/replacing-all-occurrences-of-a-string-in-javascript

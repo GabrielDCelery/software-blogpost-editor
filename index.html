@@ -5,6 +5,70 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
+
+	<div id="textEditorContainer">
+		
+		<div id="textEditorFunctions" class="row">
+			<div class="col col--1-of-12 col--m-1-of-12 col--s-1-of-12">
+				<div class="functionButton" id="functionButton-bold">
+					<img src="images/svg-bold-2.svg">
+				</div>
+			</div>
+			<div class="col col--1-of-12 col--m-1-of-12 col--s-1-of-12">
+				<div class="functionButton" id="functionButton-italic">
+					<img src="images/svg-italic.svg">
+				</div>
+			</div>
+			<div class="col col--1-of-12 col--m-1-of-12 col--s-1-of-12">
+				<div class="functionButton" id="functionButton-underline">
+					<img src="images/svg-underline.svg">
+				</div>
+			</div>
+			<div class="col col--1-of-12 col--m-1-of-12 col--s-1-of-12">
+				<div class="functionButton" id="functionButton-justifyLeft">
+					<img src="images/svg-align-left.svg">
+				</div>
+			</div>
+			<div class="col col--1-of-12 col--m-1-of-12 col--s-1-of-12">
+				<div class="functionButton" id="functionButton-justifyCenter">
+					<img src="images/svg-align-center.svg">
+				</div>
+			</div>
+			<div class="col col--1-of-12 col--m-1-of-12 col--s-1-of-12">
+				<div class="functionButton" id="functionButton-justifyRight">
+					<img src="images/svg-align-right.svg">
+				</div>
+			</div>
+			<div class="col col--6-of-12">
+			</div>
+			<div class="col col--6-of-12">
+				<select class="functionSelect" id="functionSelect-fontname">
+					<option selected disabled>Font-style</option>
+					<option>Arial</option>
+					<option>Calibri</option>
+					<option>Times New Roman</option>
+				</select>
+			</div>
+			<div class="col col--6-of-12">
+				<select class="functionSelect" id="functionSelect-fontSize">
+					<option selected disabled>Font-size</option>
+					<option value="1">10px</option>
+					<option value="2">13px</option>
+					<option value="3">16px</option>
+					<option value="4">18px</option>
+					<option value="5">24px</option>
+					<option value="6">32px</option>
+					<option value="7">48px</option>
+				</select>
+			</div>
+		</div>
+
+		<div id="textEditorContent" contenteditable="true" class="col col--12-of-12">
+			<div>Write your text here....</div>
+		</div>
+
+	</div>
+
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/textedit.js"></script>
 </body>
